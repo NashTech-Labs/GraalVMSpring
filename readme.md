@@ -15,7 +15,7 @@ on the graalVm fastens the service startup time. With every run mode we can chec
 Let us now see the different run modes and how to run the application using them. Attached are some logs from the console
  when the service starts so that we can see and compare the startup time for our applications.
  
-##Run mode 1: Running as a simple java application, use:
+## Run mode 1: Running as a simple java application, use:
 `mvn clean spring-boot:run`
 
 In the logs output we can see the following at the end.
@@ -23,7 +23,7 @@ In the logs output we can see the following at the end.
 2020-07-17 18:34:05.928  INFO 25038 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2020-07-17 18:34:05.938  INFO 25038 --- [           main] c.k.s.SpringBootAndGraalvmApplication    : Started SpringBootAndGraalvmApplication in 1.876 seconds (JVM running for 2.264)
 
-##Run mode 2: Running the native-image on JVM.
+## Run mode 2: Running the native-image on JVM.
 ```
    mvn -DskipTests=true clean package
    export META=src/main/resources/META-INF
@@ -35,7 +35,7 @@ In the logs output we can see the following at the end.
 2020-07-17 18:37:45.378  INFO 25665 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2020-07-17 18:37:45.399  INFO 25665 --- [           main] c.k.s.SpringBootAndGraalvmApplication    : Started SpringBootAndGraalvmApplication in 4.089 seconds (JVM running for 4.818)
 
-##Run mode 3: Running the native image on GraalVm.
+## Run mode 3: Running the native image on GraalVm.
 ```
 1) mvn -Pgraal clean package
 2) ./target/com.knoldus.springbootandgraalvm.springbootandgraalvmapplication 
